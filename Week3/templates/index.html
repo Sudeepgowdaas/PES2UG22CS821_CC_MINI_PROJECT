@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>etcd Operations</title>
+    <style>
+      table {
+        border-collapse: collapse;
+        width: 100%;
+      }
+      th,
+      td {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>etcd Operations</h1>
+    <h2>All Keys:</h2>
+    <table>
+      <tr>
+        <th>Key</th>
+      </tr>
+      {% for key in keys %}
+      <tr>
+        <td>{{ key }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <h2>Put Key-Value:</h2>
+    <form action="/put" method="post">
+      Key: <input type="text" name="key" /><br />
+      Value: <input type="text" name="value" /><br />
+      <input type="submit" value="Put" />
+    </form>
+    <h2>Delete Key:</h2>
+    <form action="/delete" method="post">
+      Key: <input type="text" name="key" /><br />
+      <input type="submit" value="Delete" />
+    </form>
+    <h2>Get Value from Key:</h2>
+    <form action="/get_value" method="post">
+      Key: <input type="text" name="key" /><br />
+      <input type="submit" value="put" />
+    </form>
+    {% if value %}
+    <h2>Value:</h2>
+    <p>{{ value }}</p>
+    {% endif %}
+  </body>
+</html>
