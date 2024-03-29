@@ -13,8 +13,12 @@ Etcd is an open-source distributed key value store that provides strong consiste
 - **Watch Functionality**: Etcd supports watch functionality, enabling real-time notification of changes to data, making it suitable for building reactive and event-driven systems.
 - **Resilient Architecture**: Etcd empowers developers to architect resilient and scalable distributed applications with ease, ensuring data consistency and availability across their infrastructure.
 
-## Week 1
+## Setting up Single Node Cluster
 
-### Tasks
+1. Launch etcd server :
 
--
+   '''bash
+   etcd
+   {"level":"info","ts":"2021-09-17T09:19:32.783-0400","caller":"etcdmain/etcd.go:72","msg":... }
+   ⋮
+   '''

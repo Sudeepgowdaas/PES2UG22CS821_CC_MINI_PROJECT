@@ -8,7 +8,6 @@ def list_all_keys():
         keys.append(key.decode())
     return keys
 
-
 def get_value_for_key(key):
     value, _ = client.get(key)
     if value is not None:
@@ -19,6 +18,8 @@ def get_value_for_key(key):
 def put_key_value(key, value):
     client.put(key, value)
     print(f"Key '{key}' with value '{value}' has been successfully put into etcd.")
+
+
 def get(key):
     value,_=client.get(key)
     print(value.decode())
