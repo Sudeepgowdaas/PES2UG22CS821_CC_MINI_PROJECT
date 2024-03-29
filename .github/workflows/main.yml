@@ -1,0 +1,7 @@
+name: Building a Distributed Key Value Store with etcd
+
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+    branches: [ $default-branch ]
