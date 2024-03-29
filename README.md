@@ -22,3 +22,5 @@ Etcd is an open-source distributed key value store that provides strong consiste
     {"level":"info","ts":"2021-09-17T09:19:32.783-0400","caller":"etcdmain/etcd.go:72","msg":... }
     ⋮
    ```
+
+2. A single node cluster is setup , refer https://etcd.io/docs/v3.5/quickstart/ .
