@@ -17,8 +17,8 @@ Etcd is an open-source distributed key value store that provides strong consiste
 
 1. Launch etcd server :
 
-   '''bash
-   etcd
-   {"level":"info","ts":"2021-09-17T09:19:32.783-0400","caller":"etcdmain/etcd.go:72","msg":... }
-   ⋮
-   '''
+   ```bash
+    etcd
+    {"level":"info","ts":"2021-09-17T09:19:32.783-0400","caller":"etcdmain/etcd.go:72","msg":... }
+    ⋮
+   ```
