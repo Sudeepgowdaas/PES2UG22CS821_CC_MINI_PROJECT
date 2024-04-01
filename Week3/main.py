@@ -7,6 +7,7 @@ app = Flask(__name__)
 # Define etcd connection
 client = etcd3.client(host='localhost', port=2379)
 
+# Function to list all keys in etcd
 def list_all_keys():
     try:
         keys = []
@@ -17,7 +18,7 @@ def list_all_keys():
         print("Error listing all keys:", e)
         return []
 
-
+# Function to get value for a given key
 def get_value_for_key(key):
     value, _ = client.get(key)
     if value is not None:
@@ -25,6 +26,7 @@ def get_value_for_key(key):
     else:
         return None
 
+# Function to put key-value pair into etcd
 def put_key_value(key, value):
     try:
         client.put(key, value)
@@ -33,6 +35,7 @@ def put_key_value(key, value):
         print("Error putting key-value:", e)
         return False
 
+# Function to delete a key from etcd
 def delete_key(key):
     try:
         client.delete(key)
@@ -42,10 +45,12 @@ def delete_key(key):
     except grpc.RpcError:
         return False
 
+# Route for the home page
 @app.route('/')
 def index():
     return render_template('index.html', keys=list_all_keys())
 
+# Route for putting key-value pair
 @app.route('/put', methods=['POST'])
 def put():
     key = request.form['key']
@@ -55,6 +60,7 @@ def put():
     else:
         return "Error putting key-value into etcd."
 
+# Route for getting value for a given key
 @app.route('/get_value', methods=['POST'])
 def get():
     key = request.form['key']
@@ -65,6 +71,7 @@ def get():
     else:
         return "Key not found."
 
+# Route for deleting a key
 @app.route('/delete', methods=['POST'])
 def delete():
     key = request.form['key']
