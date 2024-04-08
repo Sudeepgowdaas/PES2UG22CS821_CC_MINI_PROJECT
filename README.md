@@ -38,3 +38,9 @@ python main.py
 ## Demonstration
 
 ![1gif](https://github.com/praths71018/8_Building-a-Distributed-Key-Value-Store-with-etcd/blob/main/Images/1.gif)
+
+## Functionality
+1. Inserting values in key value format
+2. Retrieving value given key as input
+3. Deleting value given key as input
+4. Display all values
