@@ -38,8 +38,9 @@
       input[type="text"],
       input[type="submit"] {
         padding: 8px;
-        width: 200px;
+        width: calc(100% - 20px); /* Calculate width to account for padding */
         margin-bottom: 10px;
+        box-sizing: border-box; /* Include padding and border in element's total width and height */
       }
       input[type="submit"] {
         background-color: #4caf50;
@@ -59,11 +60,11 @@
     <div class="container">
       <h1>etcd Operations</h1>
       <div>
-        <h2>All Keys:</h2>
+        <h2>All values:</h2>
         <table>
           <thead>
             <tr>
-              <th>Key</th>
+              <th>Values</th>
             </tr>
           </thead>
           <tbody>
