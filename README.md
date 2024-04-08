@@ -27,8 +27,14 @@ Etcd is an open-source distributed key value store that provides strong consiste
 
 ## Running Single Node Cluster
 
-Refer below for execution:
+1. Start Single node cluster in terminal
 
-![1gif](/github/Images/1.gif)
+2. Run below command in another terminal to run the program.
 
-![2gif](/github/Images/2.gif)
+```bash
+python main.py
+```
+
+## Demonstration
+
+![1gif](https://github.com/praths71018/8_Building-a-Distributed-Key-Value-Store-with-etcd/blob/main/Images/1.gif)
