@@ -82,6 +82,9 @@
           Key: <input type="text" name="key" /><br />
           Value: <input type="text" name="value" /><br />
           <input type="submit" value="Put" />
+          {% if value1 %}
+          <p>Error putting key-value into etcd.</p>
+          {% endif %}
         </form>
       </div>
       <div>
@@ -89,6 +92,9 @@
         <form action="/delete" method="post">
           Key: <input type="text" name="key" /><br />
           <input type="submit" value="Delete" />
+          {% if value2 %}
+          <p>Error deleting key from etcd.</p>
+          {% endif %}
         </form>
       </div>
       <div>
@@ -99,6 +105,9 @@
         </form>
         {% if value %}
         <h2>Value:</h2>
+        <p>{{ value }}</p>
+        {% else %}
+        <!-- <h2>Value:</h2> -->
         <p>{{ value }}</p>
         {% endif %}
       </div>

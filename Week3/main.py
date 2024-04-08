@@ -58,7 +58,7 @@ def put():
     if put_key_value(key, value):
         return redirect(url_for('index'))
     else:
-        return "Error putting key-value into etcd."
+        return render_template('index.html', value1="Error putting key-value into etcd.")
 
 # Route for getting value for a given key
 @app.route('/get_value', methods=['POST'])
@@ -69,7 +69,7 @@ def get():
         keys = list_all_keys()  # Retrieve all keys
         return render_template('index.html', value=value,keys=keys)
     else:
-        return "Key not found."
+        return render_template('index.html', value="Key not found.")
 
 # Route for deleting a key
 @app.route('/delete', methods=['POST'])
@@ -78,7 +78,7 @@ def delete():
     if delete_key(key):
         return redirect(url_for('index'))
     else:
-        return "Error deleting key from etcd."
+        return render_template('index.html', value2="Error deleting key from etcd.")
 
 if __name__ == '__main__':
     app.run(debug=True) 
